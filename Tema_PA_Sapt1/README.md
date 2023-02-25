@@ -1,4 +1,4 @@
-# ProgramareAvansata2023 - Lab 1
+# ProgramareAvansata2023 - Lab 1 - Sandu Smaranda, 2B3
 
 ## Compulsory
 
