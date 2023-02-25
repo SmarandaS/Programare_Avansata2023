@@ -1,8 +1,6 @@
 package compulsory;
 
-public class Main {
-
-    /**
+/**
      * Clasa main implementeaza cerintele din partea <i>compulsory</i> a temei pentru Lab 1
      * Am declarat intai stringul de limbaje
      * Am generat numarul random n si l-am afisat pentru a vedea valoarea lui initiala
@@ -11,6 +9,10 @@ public class Main {
      * Am afisat propozitia ceruta, avand pe ultima pozitie elementul din stringul declarat initial de pe pozitia valorii cifrei de control
      * @param args
      */
+
+public class Main {
+
+    
     public static void main(String[] args) {
 
         //System.out.println("Hello world!\n");
