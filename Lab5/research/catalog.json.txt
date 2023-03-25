@@ -1,0 +1,15 @@
+{
+  "name": "MyDocuments",
+  "docs": [
+    {
+      "id": "1",
+      "name": "article1",
+      "path": "path/to/article1"
+    },
+    {
+      "id": "2",
+      "name": "book1",
+      "path": "path/to/book1"
+    }
+  ]
+}
