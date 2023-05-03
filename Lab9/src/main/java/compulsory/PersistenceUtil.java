@@ -3,57 +3,23 @@ package compulsory;
 import javax.persistence.*;
 
 public class PersistenceUtil {
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-persistence-unit");
 
-    public static void addArtist(Artist artist) {
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        try {
-            tx.begin();
-            em.persist(artist);
-            tx.commit();
-        } catch (Exception e) {
-            if (tx != null && tx.isActive()) {
-                tx.rollback();
-            }
-            throw e;
-        } finally {
-            em.close();
+    private static final String PERSISTENCE_UNIT_NAME = "my-persistence-unit";
+    private static EntityManagerFactory emf;
+
+    private PersistenceUtil() {}
+
+    public static EntityManagerFactory getEntityManagerFactory() {
+        if (emf == null) {
+            emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         }
+        return emf;
     }
 
-    public static void addGenre(Genre genre) {
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        try {
-            tx.begin();
-            em.persist(genre);
-            tx.commit();
-        } catch (Exception e) {
-            if (tx != null && tx.isActive()) {
-                tx.rollback();
-            }
-            throw e;
-        } finally {
-            em.close();
-        }
-    }
-
-    public static void addAlbum(Album album) {
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        try {
-            tx.begin();
-            em.persist(album);
-            tx.commit();
-        } catch (Exception e) {
-            if (tx != null && tx.isActive()) {
-                tx.rollback();
-            }
-            throw e;
-        } finally {
-            em.close();
+    public static  void closeEntityManagerFactory() {
+        if (emf != null && emf.isOpen()) {
+            emf.close();
+            emf = null;
         }
     }
 }
-
