@@ -48,4 +48,9 @@ public class Album {
     public void setRelYear(int relYear) {
         this.relYear = relYear;
     }
+    
+     @Override
+    public String toString() {
+        return "Album title: " + title;
+    }
 }
