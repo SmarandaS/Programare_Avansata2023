@@ -13,21 +13,9 @@ public class ArtistRepository {
 
     public void create(Artist artist) {
         EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = null;
-
-        try {
-            tx = em.getTransaction();
-            tx.begin();
-            em.persist(artist);
-            tx.commit();
-        } catch (RuntimeException e) {
-            if (tx != null && tx.isActive()) {
-                tx.rollback();
-            }
-            throw e;
-        } finally {
-            em.close();
-        }
+        em.getTransaction().begin();
+        em.persist(artist);
+        em.getTransaction().commit();
     }
 
     public Artist findById(Integer id) {
