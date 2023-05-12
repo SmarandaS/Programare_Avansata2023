@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Table(name = "album_genre")
 public class AlbumGenre {
 
+    //cheia primara
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -22,6 +23,7 @@ public class AlbumGenre {
     @JoinColumn(name = "genre_id", referencedColumnName = "id", nullable = false)
     private Genre genre;
 
+    //setteri si getteri
     public Integer getId() {
         return id;
     }
