@@ -7,21 +7,25 @@ import javax.persistence.*;
 @Table(name = "albums")
 public class Album {
 
+    //cheia primara a tabelului
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
+    //coloanele
     @Column(name = "title")
     private String title;
 
     @Column(name = "release_year")
     private int releaseYear;
 
+    //pot fi mai multe albume la un artist
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "artist", referencedColumnName = "id")
     private Artist artist;
 
+    //setteri si getteri
     public Integer getId() {
         return id;
     }
