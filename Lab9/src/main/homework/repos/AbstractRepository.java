@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+//clasa abstracta ce implementeaza elementele CRUD(create, read, update, delete)
 
 public abstract class AbstractRepository<T, ID extends Serializable> {
 
