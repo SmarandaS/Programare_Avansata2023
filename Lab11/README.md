@@ -15,7 +15,7 @@
 
 ----------
 
-- [ ] Create REST services for:
+- [x] Create REST services for:
   adding a new player, via a HTTP POST request.
   modifying the name of a player, via a HTTP PUT request.
   deleting a player, via a HTTP DELETE request.
